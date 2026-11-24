@@ -1,16 +1,26 @@
 #include <stdio.h>
 
-int main() {
-    int ch;
-    float a, b;
-    scanf("%f %f %d", &a, &b, &ch);
+struct Student {
+    int roll;
+    char name[30];
+    float m1, m2, m3, total, per;
+};
 
-    switch (ch) {
-        case 1: printf("Addition is = %.0f\n", a + b); break;
-        case 2: printf("Subtraction is = %.0f\n", a - b); break;
-        case 3: printf("Multiplication is = %.0f\n", a * b); break;
-        case 4: printf("Division is = %.2f\n", a / b); break;
-        default: printf("Invalid choice\n");
+int main() {
+    int n;
+    struct Student s[50];
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d %s %f %f %f", &s[i].roll, s[i].name, &s[i].m1, &s[i].m2, &s[i].m3);
+        s[i].total = s[i].m1 + s[i].m2 + s[i].m3;
+        s[i].per = s[i].total / 3.0;
+    }
+
+    printf("\nRoll\tName\tS1\tS2\tS3\tTotal\tPercentage\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d\t%s\t%.0f\t%.0f\t%.0f\t%.0f\t%.2f\n",
+               s[i].roll, s[i].name, s[i].m1, s[i].m2, s[i].m3, s[i].total, s[i].per);
     }
     return 0;
 }
