@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int r = 2, c = 3, a[2][3], b[2][3], sum[2][3], sub[2][3];
+
+    for (int i = 0; i < r; i++)
+        for (int j = 0; j < c; j++) scanf("%d", &a[i][j]);
+
+    for (int i = 0; i < r; i++)
+        for (int j = 0; j < c; j++) scanf("%d", &b[i][j]);
+
+    printf("Addition of two matrices is:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            sum[i][j] = a[i][j] + b[i][j];
+            printf("%d ", sum[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("Subtraction of two matrices is:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            sub[i][j] = a[i][j] - b[i][j];
+            printf("%d ", sub[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
