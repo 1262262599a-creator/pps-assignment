@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int ch;
+    char s1[100], s2[100], temp[100];
+
+    scanf("%s %s %d", s1, s2, &ch);
+
+    switch (ch) {
+        case 1: printf("Length: %lu\n", strlen(s1)); break;
+        case 2: strcpy(temp, s1); printf("Copy: %s\n", temp); break;
+        case 3: strcpy(temp, s1); strcat(temp, s2); printf("Concat: %s\n", temp); break;
+        case 4: printf("Compare: %d\n", strcmp(s1, s2)); break;
+        default: printf("Invalid choice\n");
+    }
+    return 0;
+}
