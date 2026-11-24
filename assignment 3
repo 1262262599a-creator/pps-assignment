@@ -1,1 +1,17 @@
 
+#include <stdio.h>
+
+int main() {
+    int ch;
+    float a, b;
+    scanf("%f %f %d", &a, &b, &ch);
+
+    switch (ch) {
+        case 1: printf("Addition is = %.0f\n", a + b); break;
+        case 2: printf("Subtraction is = %.0f\n", a - b); break;
+        case 3: printf("Multiplication is = %.0f\n", a * b); break;
+        case 4: printf("Division is = %.2f\n", a / b); break;
+        default: printf("Invalid choice\n");
+    }
+    return 0;
+}
